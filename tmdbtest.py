@@ -58,12 +58,44 @@ def request_casting(id_req):
     response = requests.get(request_url)
     data = response.json()
 
-
-
-
     return data['cast']
 
+def request_directors_and_producers(movie_id):
+    api_key = '43a11d4a123a0d76d473e4f70abc1ce8'
+    root_url = 'https://api.themoviedb.org/3/'
 
+    #/movie/id/credits
+    path = 'movie/{0}/credits'.format(
+        movie_id
+    )
+    request_url = '{0}{1}?api_key={2}'.format(
+        root_url,
+        path,
+        api_key
+    )
+
+    print("request credits url : " + request_url)
+    response = requests.get(request_url)
+    data = response.json()
+
+    crew = data['crew']
+    producers = []
+    directors = []
+
+    for c in crew:
+        if(c['job']=="Producer"):
+            producer_info = {}
+            producer_info["name"] = c["name"]
+            producer_info["id"] = c["id"]
+            producers.append(producer_info)
+
+        if(c['job']== "Director"):
+            director_info = {}
+            director_info["name"] = c["name"]
+            director_info["id"] = c["id"]
+            directors.append(director_info)
+
+    return directors, producers
 
 def write_json(movie_list):
 
@@ -75,6 +107,11 @@ def write_json(movie_list):
 
         #chama request_casting e adiciona no json
         movie['casting'] = request_casting(movie_id)
+
+        directors, producers = request_directors_and_producers(movie_id)
+
+        movie['directors'] = directors
+        movie['producers'] = producers
 
         filename = 'movies/{0}.json'.format(movie_id)
         f = open(filename, 'w')
