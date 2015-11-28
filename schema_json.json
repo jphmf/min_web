@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "poster_path": {
+      "id": "/poster_path",
+      "type": "string"
+    },
+    "title": {
+      "id": "/title",
+      "type": "string"
+    },
+    "overview": {
+      "id": "/overview",
+      "type": "string"
+    },
+    "release_date": {
+      "id": "/release_date",
+      "type": "string"
+    },
+    "popularity": {
+      "id": "/popularity",
+      "type": "number"
+    },
+    "original_title": {
+      "id": "/original_title",
+      "type": "string"
+    },
+    "directors": {
+      "id": "/directors",
+      "type": "array",
+      "items": [
+        {
+          "id": "/directors/0",
+          "type": "integer"
+        },
+        null
+      ]
+    },
+    "backdrop_path": {
+      "id": "/backdrop_path",
+      "type": "string"
+    },
+    "producers": {
+      "id": "/producers",
+      "type": "array",
+      "items": {
+        "id": "/producers/0",
+        "type": "integer"
+      }
+    },
+    "vote_count": {
+      "id": "/vote_count",
+      "type": "integer"
+    },
+    "video": {
+      "id": "/video",
+      "type": "boolean"
+    },
+    "adult": {
+      "id": "/adult",
+      "type": "boolean"
+    },
+    "vote_average": {
+      "id": "/vote_average",
+      "type": "number"
+    },
+    "casting": {
+      "id": "/casting",
+      "type": "array",
+      "items": [
+        {
+          "id": "/casting/0",
+          "type": "integer"
+        }
+      ]
+    },
+    "genre_ids": {
+      "id": "/genre_ids",
+      "type": "array",
+      "items": [
+        {
+          "id": "/genre_ids/0",
+          "type": "integer"
+        },
+        null,
+        null
+      ]
+    },
+    "similar": {
+      "id": "/similar",
+      "type": "array",
+      "items": [
+        {
+          "id": "/similar/0",
+          "type": "integer"
+        }
+      ]
+    },
+    "id": {
+      "id": "/id",
+      "type": "integer"
+    },
+    "original_language": {
+      "id": "/original_language",
+      "type": "string"
+    }
+  },
+  "required": [
+    "poster_path",
+    "title",
+    "overview",
+    "release_date",
+    "popularity",
+    "original_title",
+    "directors",
+    "backdrop_path",
+    "producers",
+    "vote_count",
+    "video",
+    "adult",
+    "vote_average",
+    "casting",
+    "genre_ids",
+    "similar",
+    "id",
+    "original_language"
+  ]
+}
