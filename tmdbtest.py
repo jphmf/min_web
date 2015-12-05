@@ -147,8 +147,8 @@ def write_json(movie_list):
         f.write(str(movie))
         f.close()
 
-        print("dormindo por 2s")
-        time.sleep(2)
+        print("dormindo por 1s")
+        time.sleep(1)
         print("acordando")
 
 
